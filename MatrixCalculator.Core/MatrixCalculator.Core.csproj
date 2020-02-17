@@ -45,7 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MatrizCalculator\MatrixCalculator.Models.csproj">
+    <ProjectReference Include="..\MatrixCalculator.Models\MatrixCalculator.Models.csproj">
       <Project>{e02cfd06-4112-49bc-9e01-17acadd38fce}</Project>
       <Name>MatrixCalculator.Models</Name>
     </ProjectReference>

@@ -60,7 +60,7 @@
       <Project>{277cef48-e912-4e7a-9d9b-a1630df62e44}</Project>
       <Name>MatrixCalculator.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MatrizCalculator\MatrixCalculator.Models.csproj">
+    <ProjectReference Include="..\MatrixCalculator.Models\MatrixCalculator.Models.csproj">
       <Project>{e02cfd06-4112-49bc-9e01-17acadd38fce}</Project>
       <Name>MatrixCalculator.Models</Name>
     </ProjectReference>
