@@ -53,6 +53,7 @@
     <Compile Include="MatrixWrapperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CalculatorInverse.cs" />
+    <Compile Include="SimilarCalculus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

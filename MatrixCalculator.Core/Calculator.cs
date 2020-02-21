@@ -128,15 +128,32 @@ namespace MatrixCalculator.Core
             return m;
         }
 
-        public Matrix Subtract(Matrix m1, Matrix m2)
+        public Matrix Subtract(Matrix m1, Matrix m2) => CommonCalculus('-', m1, m2);
+        public Matrix Sum(Matrix m1, Matrix m2) => CommonCalculus('-', m1, m2);
+
+        private Matrix CommonCalculus(char operation, Matrix m1, Matrix m2)
         {
-            throw new System.NotImplementedException();
+            if (m1.NumberOfRows != m2.NumberOfRows || m1.NumberOfColumns != m2.NumberOfColumns)
+                throw new InvalidOperationException();
+
+            Matrix newMatrix = new Matrix(m1.NumberOfRows, m2.NumberOfColumns);
+
+            for (int i = 0; i < m1.NumberOfRows; i++)
+            {
+                for (int j = 0; j < m1.NumberOfColumns; j++)
+                {
+                    if (operation == '+')
+                        newMatrix.AddItem(m1.GetItem(i, j) + m2.GetItem(i, j));
+                    else if (operation == '-')
+                        newMatrix.AddItem(m1.GetItem(i, j) - m2.GetItem(i, j));
+
+                }
+            }
+
+            return newMatrix;
         }
 
-        public Matrix Sum(Matrix m1, Matrix m2)
-        {
-            throw new System.NotImplementedException();
-        }
+
 
         public Matrix Transpose(Matrix m)
         {
@@ -150,6 +167,24 @@ namespace MatrixCalculator.Core
             }
 
             return transpose;
+        }
+
+        public bool AreEqual(Matrix m1, Matrix m2)
+        {
+            if (m1.NumberOfColumns != m2.NumberOfColumns
+               || m1.NumberOfRows != m2.NumberOfRows)
+                return false;
+
+            for(int i = 0; i < m1.NumberOfRows; i++)
+            {
+                for(int j = 0; j < m1.NumberOfColumns; j++)
+                {
+                    if (m1.GetItem(i, j) != Math.Round(m2.GetItem(i, j), 2))
+                        return false;
+                }
+            }
+
+            return true;
         }
     }
 }

@@ -33,42 +33,10 @@ namespace MatrixCalculator.Tests
 
             foreach(Matrix[] testCase in testCases)
             {
-                Show(testCase[0]);
-
-                Assert.IsTrue(AreEqual(testCase[0], calculator.Inverse(testCase[1])));
-            }
-        }
-        private void Show(Matrix m)
-        {
-            for (int i = 0; i < m.NumberOfRows; i++)
-            {
-                for (int j = 0; j < m.NumberOfColumns; j++)
-                {
-                    Console.Write(m.GetItem(i, j).ToString("F2"));
-                    Console.Write(" ");
-                }
-
-                Console.WriteLine("");
+                Assert.IsTrue(calculator.AreEqual(testCase[0], calculator.Inverse(testCase[1])));
             }
         }
 
-        private bool AreEqual(Matrix expected, Matrix result)
-        {
-            if (expected.NumberOfColumns != result.NumberOfColumns
-               || expected.NumberOfRows != result.NumberOfRows)
-                return false;
-
-            for(int i = 0; i < expected.NumberOfRows; i++)
-            {
-                for(int j = 0; j < expected.NumberOfColumns; j++)
-                {
-                    if (expected.GetItem(i, j) != Math.Round(result.GetItem(i, j), 2))
-                        return false;
-                }
-            }
-
-            return true;
-        }
     }
 
 

@@ -14,5 +14,6 @@ namespace MatrixCalculator.Contracts
         Matrix Product(Matrix m1, Matrix m2);
         Matrix Scalar(double scalar, Matrix m);
         Matrix Adjuntage(Matrix m);
+        bool AreEqual(Matrix m1, Matrix m2);
     }
 }
