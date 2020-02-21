@@ -51,8 +51,11 @@ namespace MatrixCalculator.Core
 
         public double Determinant(Matrix matrix)
         {
-            // aqui utilizamos o teorema de laplace para calcular
-            // sempre usaremos a primeira coluna para o calculo
+            if (matrix.NumberOfColumns != matrix.NumberOfRows)
+                throw new InvalidOperationException("Não é possível calcular o determinante de uma matriz não quadrada");
+
+            if (matrix.NumberOfColumns == 1 && matrix.NumberOfRows == 1)
+                return matrix.GetItem(0, 0);
 
             double determinant = 0.0;
 
@@ -64,9 +67,12 @@ namespace MatrixCalculator.Core
                 return determinant;
             }
 
+            // aqui utilizamos o teorema de laplace para calcular
+            // sempre usaremos a primeira coluna para o calculo
+
             int columnChoosed = 0;
 
-            for(int i = 0; i < matrix.NumberOfRows; i++)
+            for (int i = 0; i < matrix.NumberOfRows; i++)
             {
                 Matrix cofactorElement = CofactorElement(i, columnChoosed, matrix);
                 determinant += 
@@ -80,8 +86,13 @@ namespace MatrixCalculator.Core
 
         public Matrix Inverse(Matrix m)
         {
-            throw new System.NotImplementedException();
+            double det = Determinant(m);
+
+            return Scalar((1.0 / det), Adjuntage(m));
         }
+
+        public Matrix Adjuntage(Matrix m) => Transpose(Cofactor(m));
+        
 
         public Matrix Product(Matrix m1, Matrix m2)
         {
@@ -106,7 +117,15 @@ namespace MatrixCalculator.Core
 
         public Matrix Scalar(double scalar, Matrix m)
         {
-            throw new System.NotImplementedException();
+            for(int i = 0; i < m.NumberOfRows; i++)
+            {
+                for(int j = 0; j < m.NumberOfColumns; i++)
+                {
+                    m.SetItem(i, j, m.GetItem(i, j) * scalar);
+                }
+            }
+
+            return m;
         }
 
         public Matrix Subtract(Matrix m1, Matrix m2)
@@ -121,7 +140,16 @@ namespace MatrixCalculator.Core
 
         public Matrix Transpose(Matrix m)
         {
-            throw new System.NotImplementedException();
+            Matrix transpose = new Matrix(m.NumberOfRows, m.NumberOfColumns);
+            for(int i = 0; i < m.NumberOfRows; i++)
+            {
+                for(int j = 0; j < m.NumberOfColumns; j++)
+                {
+                    transpose.SetItem(j, i, m.GetItem(i, j));
+                }
+            }
+
+            return transpose;
         }
     }
 }

@@ -13,5 +13,6 @@ namespace MatrixCalculator.Contracts
         Matrix Sum(Matrix m1, Matrix m2);
         Matrix Product(Matrix m1, Matrix m2);
         Matrix Scalar(double scalar, Matrix m);
+        Matrix Adjuntage(Matrix m);
     }
 }

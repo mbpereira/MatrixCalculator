@@ -1,4 +1,5 @@
-﻿namespace MatrixCalculator.Models
+﻿using System;
+namespace MatrixCalculator.Models
 {
     internal struct Position
     {
@@ -86,6 +87,13 @@
             }
 
             _data = data;
+        }
+
+        public void SetItem(int i, int j, double value)
+        {
+            if (i >= NumberOfRows || j >= NumberOfColumns)
+                throw new IndexOutOfRangeException();
+            _data[i, j] = value;
         }
      
         
