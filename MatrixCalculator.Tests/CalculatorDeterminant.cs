@@ -9,11 +9,7 @@ namespace MatrixCalculator.Tests
     [TestClass]
     public class CalculatorDeterminant
     {
-        internal class WrapperTest
-        {
-            public double Expected;
-            public Matrix Matrix;
-        }
+
         [TestMethod]
         public void ShouldReturnDeterminant()
         {
@@ -24,15 +20,15 @@ namespace MatrixCalculator.Tests
 
             Calculator calculator = new Calculator();
 
-            IEnumerable<WrapperTest> testCases = new List<WrapperTest>
+            IEnumerable<MatrixWrapperTest> testCases = new List<MatrixWrapperTest>
             {
-                new WrapperTest { Expected = 5, Matrix = test0 },
-                new WrapperTest { Expected = -7, Matrix = test1 },
-                new WrapperTest { Expected = -151, Matrix = test2 },
-                new WrapperTest { Expected = -539, Matrix = test3 }
+                new MatrixWrapperTest { Expected = 5, Matrix = test0 },
+                new MatrixWrapperTest { Expected = -7, Matrix = test1 },
+                new MatrixWrapperTest { Expected = -151, Matrix = test2 },
+                new MatrixWrapperTest { Expected = -539, Matrix = test3 }
             };
 
-            foreach (WrapperTest testCase in testCases)
+            foreach (MatrixWrapperTest testCase in testCases)
             {
                 Assert.AreEqual(testCase.Expected, calculator.Determinant(testCase.Matrix));
             }

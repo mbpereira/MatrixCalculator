@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorDeterminant.cs" />
+    <Compile Include="MatrixWrapperTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CalculatorInverse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

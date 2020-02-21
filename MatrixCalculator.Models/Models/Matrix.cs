@@ -30,7 +30,9 @@ namespace MatrixCalculator.Models
 
         public Matrix(int rows, int columns)
         {
-            _data = new double[rows, columns];
+            NumberOfRows = rows;
+            NumberOfColumns = columns;
+            _data = new double[NumberOfRows, NumberOfColumns];
             _nextFreePosition = new Position(0, 0);
         }
 

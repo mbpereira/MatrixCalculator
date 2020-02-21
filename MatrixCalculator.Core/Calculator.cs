@@ -119,7 +119,7 @@ namespace MatrixCalculator.Core
         {
             for(int i = 0; i < m.NumberOfRows; i++)
             {
-                for(int j = 0; j < m.NumberOfColumns; i++)
+                for(int j = 0; j < m.NumberOfColumns; j++)
                 {
                     m.SetItem(i, j, m.GetItem(i, j) * scalar);
                 }
