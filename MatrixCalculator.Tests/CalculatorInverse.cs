@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MatrixCalculator.Contracts;
+using MatrixCalculator.Core.Contracts;
 using MatrixCalculator.Core;
-using MatrixCalculator.Models;
+using MatrixCalculator.Core.Models;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

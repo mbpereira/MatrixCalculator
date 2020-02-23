@@ -1,4 +1,4 @@
-﻿using MatrixCalculator.Models;
+﻿using MatrixCalculator.Core.Models;
 
 namespace MatrixCalculator.Tests
 {

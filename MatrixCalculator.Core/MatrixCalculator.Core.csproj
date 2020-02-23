@@ -42,13 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="Contracts\IMatrixCalculator.cs" />
+    <Compile Include="Models\Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MatrixCalculator.Models\MatrixCalculator.Models.csproj">
-      <Project>{e02cfd06-4112-49bc-9e01-17acadd38fce}</Project>
-      <Name>MatrixCalculator.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MatrixCalculator.Models
+namespace MatrixCalculator.Core.Models
 {
     internal struct Position
     {

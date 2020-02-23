@@ -1,5 +1,5 @@
-﻿using MatrixCalculator.Contracts;
-using MatrixCalculator.Models;
+﻿using MatrixCalculator.Core.Contracts;
+using MatrixCalculator.Core.Models;
 using System;
 
 namespace MatrixCalculator.Core
@@ -99,7 +99,7 @@ namespace MatrixCalculator.Core
             if (m1.NumberOfColumns != m2.NumberOfRows)
                 throw new InvalidOperationException("Matriz com número de colunas diferente do número de linhas");
 
-            double[,] product = new double[m1.NumberOfColumns, m2.NumberOfRows];
+            double[,] product = new double[m1.NumberOfRows, m2.NumberOfColumns];
 
             for (int rowM1 = 0; rowM1 < m1.NumberOfRows; rowM1++)
             {
@@ -128,10 +128,10 @@ namespace MatrixCalculator.Core
             return m;
         }
 
-        public Matrix Subtract(Matrix m1, Matrix m2) => CommonCalculus('-', m1, m2);
-        public Matrix Sum(Matrix m1, Matrix m2) => CommonCalculus('-', m1, m2);
+        public Matrix Subtract(Matrix m1, Matrix m2) => SimilarCalculus('-', m1, m2);
+        public Matrix Sum(Matrix m1, Matrix m2) => SimilarCalculus('+', m1, m2);
 
-        private Matrix CommonCalculus(char operation, Matrix m1, Matrix m2)
+        private Matrix SimilarCalculus(char operation, Matrix m1, Matrix m2)
         {
             if (m1.NumberOfRows != m2.NumberOfRows || m1.NumberOfColumns != m2.NumberOfColumns)
                 throw new InvalidOperationException();

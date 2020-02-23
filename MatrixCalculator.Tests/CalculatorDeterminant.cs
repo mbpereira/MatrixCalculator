@@ -1,5 +1,5 @@
 ﻿using System;
-using MatrixCalculator.Models;
+using MatrixCalculator.Core.Models;
 using MatrixCalculator.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;

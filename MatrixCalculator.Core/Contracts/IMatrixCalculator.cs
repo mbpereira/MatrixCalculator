@@ -1,6 +1,7 @@
-﻿using MatrixCalculator.Models;
+﻿
+using MatrixCalculator.Core.Models;
 
-namespace MatrixCalculator.Contracts
+namespace MatrixCalculator.Core.Contracts
 {
     public interface IMatrixCalculator
     {
